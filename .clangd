@@ -1,0 +1,30 @@
+CompileFlags:
+  Add: [
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wshadow",
+    "-Wconversion",
+    "-Wpedantic",
+    "-Werror"
+  ]
+  Remove: ["-W*"]
+  Compiler: clang++
+
+Diagnostics:
+  ClangTidy:
+    Add: [
+      "performance-*",
+      "bugprone-*",
+      "readability-*",
+      "modernize-*"
+    ]
+    Remove: [
+      "modernize-use-trailing-return-type"
+    ]
+    CheckOptions:
+      readability-identifier-naming.VariableCase: camelCase
+      readability-identifier-naming.FunctionCase: camelBack
+
+Index:
+  Background: Build
