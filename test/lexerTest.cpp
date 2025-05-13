@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+
 #include "lexer/lexer.h"
 
 TEST(Lexer, ReturnsEOFWhenFileIsEmpty) {
