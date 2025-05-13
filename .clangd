@@ -17,14 +17,23 @@ Diagnostics:
       "performance-*",
       "bugprone-*",
       "readability-*",
-      "modernize-*"
+      "modernize-*",
+      "cppcoreguidelines-*",
+      "cert-*",
+      "clang-analyzer-*",
+      "hicpp-*",
+      "misc-*"
     ]
     Remove: [
-      "modernize-use-trailing-return-type"
+      "modernize-use-trailing-return-type",
+      "cppcoreguidelines-owning-memory",
+      "cppcoreguidelines-avoid-non-const-global-variables",
+      "cert-err58-cpp"
     ]
     CheckOptions:
       readability-identifier-naming.VariableCase: camelCase
       readability-identifier-naming.FunctionCase: camelBack
+    HeaderFilterRegex: ''
 
 Index:
   Background: Build
