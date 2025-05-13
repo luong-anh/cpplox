@@ -11,6 +11,27 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# Run clang-format
+file(GLOB_RECURSE ALL_SOURCE_FILES
+  src/*.cpp
+  src/*.h
+  test/*.cpp
+)
+
+add_custom_target(clang-format
+  COMMAND clang-format
+  -i
+  -style=file
+  ${ALL_SOURCE_FILES}
+  COMMENT "Running clang-format on source files"
+)
+
+# Run clang-tidy
+set(CMAKE_CXX_CLANG_TIDY
+  clang-tidy;
+  -quiet;
+)
+
 # Include all source files except test files
 file(GLOB_RECURSE SOURCE_FILES src/*.cpp src/*.h)
 add_executable(interpreter ${SOURCE_FILES})
