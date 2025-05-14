@@ -22,6 +22,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Install Clang
+      run: sudo apt install clang
+
+    - name: Set Clang as default
+      run: |
+        export CC=clang
+        export CXX=clang++
+        cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_CXX_COMPILER=clang++
+
+
     - name: Clang-Format Check
       run: |
         echo "Checking clang-format..."
