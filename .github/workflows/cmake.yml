@@ -35,7 +35,10 @@ jobs:
     - name: Clang-Tidy Check
       run: |
         echo "Running clang-tidy..."
-        run-clang-tidy -p build -quiet || true
+        run-clang-tidy -p build \
+          -header-filter='.*' \
+          -exclude='.*(gtest|googletest|third_party).*' \
+          -quiet
 
     - name: Build
       # Build your program with the given configuration
