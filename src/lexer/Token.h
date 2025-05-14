@@ -14,5 +14,5 @@ private:
     TokenType type;
     std::string lexeme;
     std::string literal;
-    int line;
+    [[maybe_unused]] int line;
 };
