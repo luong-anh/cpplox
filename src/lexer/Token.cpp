@@ -1,6 +1,6 @@
 #include "Token.h"
 
 Token::Token(TokenType type, std::string&& lexeme, std::string&& literal, int line)
-    : type(type), lexeme(std::move(lexeme)), literal(std::move(literal)), line(line){};
+    : type_(type), lexeme_(std::move(lexeme)), literal_(std::move(literal)), line_(line){};
 
-std::string Token::toString() { return TokenTypeNames.at(type) + " " + lexeme + " " + literal; }
+std::string Token::toString() { return TokenTypeNames.at(type_) + " " + lexeme_ + " " + literal_; }

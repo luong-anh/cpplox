@@ -11,8 +11,8 @@ public:
     std::string toString();
 
 private:
-    TokenType type;
-    std::string lexeme;
-    std::string literal;
-    [[maybe_unused]] int line;
+    TokenType type_;
+    std::string lexeme_;
+    std::string literal_;
+    [[maybe_unused]] int line_;
 };
