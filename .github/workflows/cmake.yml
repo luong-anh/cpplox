@@ -25,7 +25,7 @@ jobs:
     - name: Clang-Format Check
       run: |
         echo "Checking clang-format..."
-        find src include tests -regex '.*\.\(cpp\|h\)' -exec clang-format --dry-run --Werror --style=file {} +
+        find src test -regex '.*\.\(cpp\|h\)' -exec clang-format --dry-run --Werror --style=file {} +
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
