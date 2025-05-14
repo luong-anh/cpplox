@@ -47,3 +47,9 @@ std::string readFileContents(const std::string& filename) {
 
     return buffer.str();
 }
+
+void report(int line, const std::string& where, const std::string& message) {
+    std::cerr << "[line " + std::to_string(line) + "] Error" + where + ": " + message;
+}
+
+void error(int line, const std::string& message) { report(line, "", message); }
