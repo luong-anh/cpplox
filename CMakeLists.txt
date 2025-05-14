@@ -2,11 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 project(cpplox)
 
 # Compile options fit to clang-tidy
-if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
-    add_compile_options(-std=c++17 -Wall -Wextra -Wpedantic -Werror -Wshadow -Wconversion)
-elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    add_compile_options(/W4 /WX)
-endif()
+add_compile_options(-std=c++17 -Wall -Wextra -Wpedantic -Werror -Wshadow -Wconversion)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
