@@ -35,10 +35,10 @@ jobs:
     - name: Clang-Tidy Check
       run: |
         echo "Running clang-tidy..."
-        run-clang-tidy -p build \
-          -header-filter='.*' \
-          -exclude='.*(gtest|googletest|third_party).*' \
-          -quiet
+
+        # Only run tidy on your project sources, not tests or third-party
+        find src -name '*.cpp' -o -name '*.h' > files.txt
+        run-clang-tidy -p build -quiet -- $(cat files.txt)
 
     - name: Build
       # Build your program with the given configuration
